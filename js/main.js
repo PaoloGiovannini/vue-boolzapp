@@ -4,7 +4,7 @@ createApp({
   data() {
     return {
         
-        newMessage: '',
+    
         selectedContact: 0,
         contacts: [
             {
