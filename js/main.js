@@ -3,7 +3,19 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-
+        
+        newMessageArray:[
+            {
+                message : 'ciao',
+                ora: '11'
+            },
+            {
+                message : 'ciao1',
+                ora: '11'
+            },
+            
+        ],
+        newMessage: '',
         selectedContact: 0,
         contacts: [
             {
