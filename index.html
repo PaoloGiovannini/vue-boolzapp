@@ -73,11 +73,12 @@
                                 </div>
                             </div>
                             <div class="chat-msg">
-                                <div v-for="(element, index) in contacts[selectedContact].messages" class="d-flex justify-end">
-                                    <div v-if="element.status == 'sent'" class="send-chat">{{element.message}}</div>
-                                </div>
-                                <div v-for="(element, index) in contacts[selectedContact].messages" class="d-flex ">
-                                    <div v-if="element.status == 'received' " class="recieved-chat">{{element.message}}</div>
+                                
+                                <div v-for="element in contacts[selectedContact].messages" class="d-flex" :class="element.status == 'sent' ? 'justify-end' : 'justify-start'">
+                                    <div :class="element.status == 'sent' ? 'sent' : 'received'">
+                                        <span>{{element.message}}</span>
+                                        
+                                    </div>
                                 </div>
                                 
                                 
@@ -87,7 +88,7 @@
                                     <i class="fa-regular fa-face-smile"></i>
                                 </div>
                                 <div class="flex-grow">
-                                    <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage">
+                                    <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendNewMessage(selectedContact)">
                                 </div>
                                 <div class="padding-20">
                                     <i class="fa-solid fa-microphone"></i>

@@ -4,7 +4,7 @@ createApp({
   data() {
     return {
         
-    
+        newMessage: '',
         selectedContact: 0,
         contacts: [
             {
@@ -175,6 +175,12 @@ createApp({
     selectContact(index){
         
         this.selectedContact = index;
+    },
+    sendNewMessage(index){
+        if(this.newMessage != ''){
+            this.contacts[index].messages.push({message: this.newMessage, status: 'sent' });        
+            this.newMessage=''
+        }
     }
   }
 }).mount('#app')

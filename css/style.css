@@ -23,6 +23,10 @@
     justify-content: end;
 }
 
+.justify-start{
+    justify-content: start;
+}
+
 .flex-column{
     flex-direction: column;
 }
@@ -140,14 +144,14 @@ a{
     overflow: scroll;
 }
 
-.send-chat{
+.sent{
     margin: 30px;
     border-radius: 10px;
     padding: 13px;
     background-color: #d5f9ba;
 }
 
-.recieved-chat{
+.received{
     margin: 30px;
     border-radius: 10px;
     padding: 13px;
@@ -171,3 +175,4 @@ a{
 .aside small{
     color: lightgray;
 }
+
