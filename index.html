@@ -40,144 +40,31 @@
                             </div>
                             <div class="chat-list">
                                 <ul>
-                                    <li class="d-flex">
-                                        <img src="img/avatar_1.jpg" alt="foto profilo">
+                                    <li v-for="(element, index) in contacts" class="d-flex">
+                                        <img :src="element.avatar" alt="foto profilo">
                                         <div class="d-flex flex-column">
-                                            <span>Michele</span>
+                                            <span>{{element.name}}</span>
                                             <small>Ultimo messaggio inviato</small>
                                         </div>
                                         <div class="flex-grow text-end">
                                             <small>12:00</small>
                                         </div>
                                     </li>
-                                    <li class="d-flex">
-                                        <img src="img/avatar_1.jpg" alt="foto profilo">
-                                        <div class="d-flex flex-column">
-                                            <span>Michele</span>
-                                            <small>Ultimo messaggio inviato</small>
-                                        </div>
-                                        <div class="flex-grow text-end">
-                                            <small>12:00</small>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <img src="img/avatar_1.jpg" alt="foto profilo">
-                                        <div class="d-flex flex-column">
-                                            <span>Michele</span>
-                                            <small>Ultimo messaggio inviato</small>
-                                        </div>
-                                        <div class="flex-grow text-end">
-                                            <small>12:00</small>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <img src="img/avatar_1.jpg" alt="foto profilo">
-                                        <div class="d-flex flex-column">
-                                            <span>Michele</span>
-                                            <small>Ultimo messaggio inviato</small>
-                                        </div>
-                                        <div class="flex-grow text-end">
-                                            <small>12:00</small>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <img src="img/avatar_1.jpg" alt="foto profilo">
-                                        <div class="d-flex flex-column">
-                                            <span>Michele</span>
-                                            <small>Ultimo messaggio inviato</small>
-                                        </div>
-                                        <div class="flex-grow text-end">
-                                            <small>12:00</small>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <img src="img/avatar_1.jpg" alt="foto profilo">
-                                        <div class="d-flex flex-column">
-                                            <span>Michele</span>
-                                            <small>Ultimo messaggio inviato</small>
-                                        </div>
-                                        <div class="flex-grow text-end">
-                                            <small>12:00</small>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <img src="img/avatar_1.jpg" alt="foto profilo">
-                                        <div class="d-flex flex-column">
-                                            <span>Michele</span>
-                                            <small>Ultimo messaggio inviato</small>
-                                        </div>
-                                        <div class="flex-grow text-end">
-                                            <small>12:00</small>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <img src="img/avatar_1.jpg" alt="foto profilo">
-                                        <div class="d-flex flex-column">
-                                            <span>Michele</span>
-                                            <small>Ultimo messaggio inviato</small>
-                                        </div>
-                                        <div class="flex-grow text-end">
-                                            <small>12:00</small>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <img src="img/avatar_1.jpg" alt="foto profilo">
-                                        <div class="d-flex flex-column">
-                                            <span>Michele</span>
-                                            <small>Ultimo messaggio inviato</small>
-                                        </div>
-                                        <div class="flex-grow text-end">
-                                            <small>12:00</small>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <img src="img/avatar_1.jpg" alt="foto profilo">
-                                        <div class="d-flex flex-column">
-                                            <span>Michele</span>
-                                            <small>Ultimo messaggio inviato</small>
-                                        </div>
-                                        <div class="flex-grow text-end">
-                                            <small>12:00</small>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <img src="img/avatar_1.jpg" alt="foto profilo">
-                                        <div class="d-flex flex-column">
-                                            <span>Michele</span>
-                                            <small>Ultimo messaggio inviato</small>
-                                        </div>
-                                        <div class="flex-grow text-end">
-                                            <small>12:00</small>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <img src="img/avatar_1.jpg" alt="foto profilo">
-                                        <div class="d-flex flex-column">
-                                            <span>Michele</span>
-                                            <small>Ultimo messaggio inviato</small>
-                                        </div>
-                                        <div class="flex-grow text-end">
-                                            <small>12:00</small>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <img src="img/avatar_1.jpg" alt="foto profilo">
-                                        <div class="d-flex flex-column">
-                                            <span>Michele</span>
-                                            <small>Ultimo messaggio inviato</small>
-                                        </div>
-                                        <div class="flex-grow text-end">
-                                            <small>12:00</small>
-                                        </div>
-                                    </li>
+                                    
+                                    
+                                   
                                 </ul>
                             </div>
                         </div>
                         <div class="chat">
                             <div class="d-flex space-between bg-grey h-70 border-left">
                                 <div class="d-flex align-center my-profile">
-                                    <img src="img/avatar_io.jpg" alt="avatar profilo personale">
-                                    <span>Sofia</span>
+                                    <img src="img/avatar_1.jpg" alt="avatar profilo personale">
+                                    <div class="d-flex flex-column">
+                                        <span>Michele</span>
+                                        <small>Ultimo accesso oggi alle 12</small>
+                                    </div>
+                                    
                                 </div>
                                 <div class="icons d-flex align-center">
                                     <i class="fa-solid fa-magnifying-glass"></i>
