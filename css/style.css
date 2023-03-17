@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.d-flex{
+    display: flex;
+}
+.space-between{
+    justify-content: space-between;
+}
+
+.space-around{
+    justify-content: space-around;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.justify-end{
+    justify-content: end;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.flex-grow{
+    flex-grow: 1;
+}
+
+.bg-grey{
+    background-color: #eaeaea;
+}
+
+.bg-aqua{
+    background-color: #8edafc;
+}
+
+
+.h-70{
+    height: 70px;
+}
+
+.text-end{
+    text-align: end;
+}
+
+.padding-20{
+    padding: 20px;
+}
+
+.background {
+    height: 100vh;
+    background: linear-gradient(180deg, rgb(0, 150, 136) 15%, rgb(213, 219, 215) 15%);
+    justify-content: center;
+    align-items: center;
+}
+
+.box-chat{
+    width: 70%;
+    height: 80%;
+    background-color: white;
+}
+
+.aside{
+    width: 35%;
+}
+
+.my-profile{
+    padding: 10px;
+}
+
+img{
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.icons i{
+    padding: 0px 10px;
+    color: #b1b1b1;
+}
+
+.rounded{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.notify i {
+    font-size: 18;
+    color:#8edafc;
+}
+
+a{
+    color: #707070;
+}
+
+.notify{
+    padding: 20px;
+}
+
+.search{
+    padding: 10px;
+    background-color: #eaeaea;
+}
+
+.search input{
+    width: 100%;
+}
+
+.chat{
+    width: 70%;
+}
+
+.chat-list{
+    height: calc(100% - 190px);
+    overflow: scroll;
+}
+
+.chat-list li{
+    padding: 8px;
+    border-bottom: 2px solid #f5f5f5;
+}
+  
+
+.border-left{
+    border-left: 1px solid #b1b1b1;
+}
+
+.chat-msg{
+    height: calc(100% - 140px);
+    background-image: url(../img/mine.jpg);
+    overflow: scroll;
+}
+
+.send-chat{
+    margin: 30px;
+    border-radius: 10px;
+    padding: 13px;
+    background-color: #d5f9ba;
+}
+
+.recieved-chat{
+    margin: 30px;
+    border-radius: 10px;
+    padding: 13px;
+    background-color: white;
+}
+
+.chat input{
+    width: 100%;
+    padding: 6px;
+}
+
+.chat i{
+    color: #6b7376;
+    font-size: 20px;
+}
+
+.send-msg{
+    background-color: #f3eeea;
+}
+
