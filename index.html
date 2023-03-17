@@ -17,7 +17,7 @@
                             <div class="d-flex space-between bg-grey h-70">
                                 <div class="d-flex align-center my-profile">
                                     <img src="img/avatar_io.jpg" alt="avatar profilo personale">
-                                    <span>Sofia</span>
+                                    <span>Asia</span>
                                 </div>
                                 <div class="icons d-flex align-center">
                                     <i class="fa-solid fa-circle-notch"></i>
@@ -35,7 +35,10 @@
                                 </div>
                                 
                             </div>
-                            <div class="search">
+                            <div class="search d-flex">
+                                <div class="magnify-search d-flex align-center">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
                                 <input type="text" placeholder="Cerca o inizia una nuova chat">
                             </div>
                             <div class="chat-list">
@@ -62,7 +65,7 @@
                                     <img :src="contacts[selectedContact].avatar" alt="avatar profilo personale">
                                     <div class="d-flex flex-column">
                                         <span>{{contacts[selectedContact].name}}</span>
-                                        <small>Ultimo accesso oggi alle 12</small>
+                                        <small>Ultimo accesso oggi alle 12:00</small>
                                     </div>
                                     
                                 </div>
@@ -77,7 +80,6 @@
                                 <div v-for="element in contacts[selectedContact].messages" class="d-flex" :class="element.status == 'sent' ? 'justify-end' : 'justify-start'">
                                     <div :class="element.status == 'sent' ? 'sent' : 'received'">
                                         <span>{{element.message}}</span>
-                                        
                                     </div>
                                 </div>
                                 
