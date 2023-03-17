@@ -172,15 +172,20 @@ createApp({
     }
   },
   methods:{
-    selectContact(index){
-        
+    selectContact(index){  
         this.selectedContact = index;
     },
     sendNewMessage(index){
         if(this.newMessage != ''){
             this.contacts[index].messages.push({message: this.newMessage, status: 'sent' });        
-            this.newMessage=''
+            this.newMessage='';
+            this.receivedMessage(index);
         }
+    },
+    receivedMessage(index){
+      setTimeout(() =>{
+        this.contacts[index].messages.push({message: 'Ok!', status: 'received' });
+      }, 1000);
     }
   }
 }).mount('#app')
