@@ -39,11 +39,11 @@
                                 <div class="magnify-search d-flex align-center">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </div>
-                                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                                <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchContact">
                             </div>
                             <div class="chat-list">
                                 <ul>
-                                    <li v-for="(element, index) in contacts" class="d-flex" @click="selectContact(index)">
+                                    <li v-for="(element, index) in contacts" class="d-flex" @click="selectContact(index)" v-show="element.name.toLowerCase().includes(searchContact.toLowerCase())">
                                         <img :src="element.avatar" alt="foto profilo">
                                         <div class="d-flex flex-column">
                                             <span>{{element.name}}</span>
