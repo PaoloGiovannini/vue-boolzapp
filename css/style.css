@@ -43,6 +43,9 @@
     background-color: #8edafc;
 }
 
+.bg-white{
+    background-color: white;
+}
 
 .h-70{
     height: 70px;
@@ -195,4 +198,21 @@ a{
 
 .date{
     font-size: 7px;
+}
+
+.position-r{
+    position: relative;
+}
+
+.position-a{
+    position: absolute;
+    bottom: 0;
+}
+
+.display-none{
+    display: none;
+}
+
+.display-block{
+    display: block;
 }

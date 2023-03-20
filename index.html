@@ -77,12 +77,18 @@
                             </div>
                             <div class="chat-msg">
                                 
-                                <div v-for="element in contacts[selectedContact].messages" class="d-flex" :class="element.status == 'sent' ? 'justify-end' : 'justify-start'">
+                                <div v-for="(element, index) in contacts[selectedContact].messages" class="d-flex position-r" :class="element.status == 'sent' ? 'justify-end' : 'justify-start'">
                                     <div :class="element.status == 'sent' ? 'sent' : 'received'">
                                         <span>{{element.message}}</span>
+                                        <i class="fa-solid fa-chevron-down"></i>
                                         <div class="d-flex justify-end">
                                             <span class="date">{{element.actualDate.substr(11,5)}}</span>
                                         </div>
+                                    
+                                    </div>
+                                    <div class="position-a bg-white">
+                                        <span @click="removeMessage(index)">Cancella messaggio</span> <br>
+                                        <span >Info messaggio</span>
                                     </div>
                                 </div>
                                 
