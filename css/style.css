@@ -192,3 +192,7 @@ a{
 .aside small{
     color: lightgray;
 }
+
+.date{
+    font-size: 7px;
+}

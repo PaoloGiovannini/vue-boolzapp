@@ -80,6 +80,9 @@
                                 <div v-for="element in contacts[selectedContact].messages" class="d-flex" :class="element.status == 'sent' ? 'justify-end' : 'justify-start'">
                                     <div :class="element.status == 'sent' ? 'sent' : 'received'">
                                         <span>{{element.message}}</span>
+                                        <div class="d-flex justify-end">
+                                            <span class="date">{{element.actualDate}}</span>
+                                        </div>
                                     </div>
                                 </div>
                                 
@@ -104,6 +107,7 @@
         </main>
 
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>
