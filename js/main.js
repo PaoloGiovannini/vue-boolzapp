@@ -6,6 +6,8 @@ createApp({
   data() {
     return {
         
+        indexActive: null,
+        isActive: false,
         searchContact: '',
         newMessage: '',
         selectedContact: 0,
@@ -177,21 +179,31 @@ createApp({
   methods:{
     selectContact(index){  
         this.selectedContact = index;
+        this.indexActive = null;
+        this.isActive = false;
     },
     sendNewMessage(index){
         if(this.newMessage != ''){
             this.contacts[index].messages.push({message: this.newMessage, status: 'sent', actualDate: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)});        
             this.newMessage='';
             this.receivedMessage(index);
+            this.indexActive = null;
+            this.isActive = false;
         }
     },
     receivedMessage(index){
       setTimeout(() =>{
         this.contacts[index].messages.push({message: 'Ok!', status: 'received', actualDate: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)});
       }, 1000);
+      this.indexActive = null;
+      this.isActive = false;
     },
     removeMessage(index) {
       this.contacts[this.selectedContact].messages.splice(index, 1);                      
       },
+    invertActive(index){
+        this.isActive = !this.isActive;
+        this.indexActive = index;
+      }
   }
 }).mount('#app')

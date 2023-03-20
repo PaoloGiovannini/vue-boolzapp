@@ -13,7 +13,9 @@
             <div id="app">
                 <div class="background d-flex">
                     <div class="box-chat d-flex">
-                        <div class="aside">
+
+                        <!-- aside -->
+                        <aside>
                             <div class="d-flex space-between bg-grey h-70">
                                 <div class="d-flex align-center my-profile">
                                     <img src="img/avatar_io.jpg" alt="avatar profilo personale">
@@ -25,7 +27,7 @@
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                 </div>
                             </div>
-                            <div class="d-flex bg-aqua notify">
+                            <div class="d-flex bg-aqua padding-20 notify">
                                 <div class="rounded d-flex align-center">
                                     <i class="fa-solid fa-bell-slash"></i>
                                 </div>
@@ -42,7 +44,7 @@
                                 <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchContact">
                             </div>
                             <div class="chat-list">
-                                <ul>
+                                <ul class="cursor">
                                     <li v-for="(element, index) in contacts" class="d-flex" @click="selectContact(index)" v-show="element.name.toLowerCase().includes(searchContact.toLowerCase())">
                                         <img :src="element.avatar" alt="foto profilo">
                                         <div class="d-flex flex-column">
@@ -58,8 +60,12 @@
                                    
                                 </ul>
                             </div>
-                        </div>
+                        </aside>
+                        <!-- fine aside -->
+
+                        
                         <div class="chat">
+                            <!-- lista contatti -->
                             <div class="d-flex space-between bg-grey h-70 border-left">
                                 <div class="d-flex align-center my-profile">
                                     <img :src="contacts[selectedContact].avatar" alt="avatar profilo personale">
@@ -75,29 +81,37 @@
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                 </div>
                             </div>
+                            <!-- fine lista contatti -->
+
+                            <!-- inizio chat -->
                             <div class="chat-msg">
                                 
                                 <div v-for="(element, index) in contacts[selectedContact].messages" class="d-flex position-r" :class="element.status == 'sent' ? 'justify-end' : 'justify-start'">
                                     <div :class="element.status == 'sent' ? 'sent' : 'received'">
                                         <span>{{element.message}}</span>
-                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <i class="fa-solid fa-chevron-down" @click="invertActive(index)"></i>
                                         <div class="d-flex justify-end">
                                             <span class="date">{{element.actualDate.substr(11,5)}}</span>
                                         </div>
+                                        <div class="position-a bg-white padding-10" v-if="isActive && index == indexActive" :class="element.status == 'sent' ? 'position-right' : ''">
+                                            <span class="cursor" @click="removeMessage(index)">Cancella messaggio</span> <br>
+                                            <span class="cursor">Info messaggio</span>
+                                        </div>
+                                    </div>
                                     
-                                    </div>
-                                    <div class="position-a bg-white">
-                                        <span @click="removeMessage(index)">Cancella messaggio</span> <br>
-                                        <span >Info messaggio</span>
-                                    </div>
                                 </div>
                                 
                                 
                             </div>
+
+                             <!-- fine chat -->
+
+                             
                             <div class="h-70 send-msg d-flex align-center">
                                 <div class="padding-20">
                                     <i class="fa-regular fa-face-smile"></i>
                                 </div>
+                                <!-- input messaggio -->
                                 <div class="flex-grow">
                                     <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendNewMessage(selectedContact)">
                                 </div>
