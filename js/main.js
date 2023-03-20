@@ -189,9 +189,6 @@ createApp({
       setTimeout(() =>{
         this.contacts[index].messages.push({message: 'Ok!', status: 'received', actualDate: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)});
       }, 1000);
-    },
-    lastMessage(index){
-      
     }
   }
 }).mount('#app')
