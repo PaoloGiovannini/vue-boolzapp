@@ -47,10 +47,10 @@
                                         <img :src="element.avatar" alt="foto profilo">
                                         <div class="d-flex flex-column">
                                             <span>{{element.name}}</span>
-                                            <small>Ultimo messaggio inviato</small>
+                                            <small>{{element.messages[element.messages.length - 1].message}}</small>
                                         </div>
                                         <div class="flex-grow text-end">
-                                            <small>12:00</small>
+                                            <small>{{element.messages[element.messages.length - 1].actualDate.substr(11,5)}}</small>
                                         </div>
                                     </li>
                                     
@@ -81,7 +81,7 @@
                                     <div :class="element.status == 'sent' ? 'sent' : 'received'">
                                         <span>{{element.message}}</span>
                                         <div class="d-flex justify-end">
-                                            <span class="date">{{element.actualDate}}</span>
+                                            <span class="date">{{element.actualDate.substr(11,5)}}</span>
                                         </div>
                                     </div>
                                 </div>
