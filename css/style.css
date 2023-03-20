@@ -219,3 +219,7 @@ aside small{
 i:hover{
     color: green;
 }
+
+.chat-msg .position-r .fa-chevron-down{
+    font-size: 13px
+}

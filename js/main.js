@@ -203,7 +203,9 @@ createApp({
       this.isActive = false;
     },
     removeMessage(index) {
-      this.contacts[this.selectedContact].messages.splice(index, 1);                      
+      this.contacts[this.selectedContact].messages.splice(index, 1);
+      this.indexActive = null;
+      this.isActive = false;                      
       },
     invertActive(index){
         this.isActive = !this.isActive;
