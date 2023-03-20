@@ -6,6 +6,8 @@ createApp({
   data() {
     return {
         
+        randomAnswer: '',
+        answer: ['Dove ci vediamo oggi?', 'Va bene', 'Ok', 'Stasera usciamo?', 'Ci sei domani?','Mi devi 10 euro', 'Dimmi tutto', 'Oggi non ci sono', 'Domani andiamo al bowling?', 'Andiamo a prendere una birra^' ],
         indexActive: null,
         isActive: false,
         searchContact: '',
@@ -193,7 +195,9 @@ createApp({
     },
     receivedMessage(index){
       setTimeout(() =>{
-        this.contacts[index].messages.push({message: 'Ok!', status: 'received', actualDate: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)});
+        console.log(this.answer.length)
+        this.randomAnswer = Math.floor(Math.random()*this.answer.length);
+        this.contacts[index].messages.push({message: this.answer[this.randomAnswer], status: 'received', actualDate: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)});
       }, 1000);
       this.indexActive = null;
       this.isActive = false;
@@ -204,6 +208,6 @@ createApp({
     invertActive(index){
         this.isActive = !this.isActive;
         this.indexActive = index;
-      }
+      },
   }
 }).mount('#app')
