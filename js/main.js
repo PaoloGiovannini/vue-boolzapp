@@ -189,9 +189,11 @@ createApp({
         if(this.newMessage.trim() != ''){
             this.contacts[index].messages.push({message: this.newMessage, status: 'sent', actualDate: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)});        
             this.newMessage='';
+            this.scrollToEnd();
             this.receivedMessage(index);
             this.indexActive = null;
             this.isActive = false;
+            
         }
     },
     receivedMessage(index){
@@ -212,8 +214,14 @@ createApp({
         this.isActive = !this.isActive;
         this.indexActive = index;
       },
-      invertBellChange(){
+    invertBellChange(){
         this.bellChange = !this.bellChange;
       },
+    scrollToEnd() {  
+      setTimeout(()=>{
+      let container = document.querySelector(".chat-msg");
+      container.scrollTo(0, container.scrollHeight);
+    },1100);
+    },
   }
 }).mount('#app')
