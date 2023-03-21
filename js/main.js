@@ -198,12 +198,11 @@ createApp({
     },
     receivedMessage(index){
       setTimeout(() =>{
-        console.log(this.answer.length)
         this.randomAnswer = Math.floor(Math.random()*this.answer.length);
         this.contacts[index].messages.push({message: this.answer[this.randomAnswer], status: 'received', actualDate: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)});
       }, 1000);
-      this.indexActive = null;
-      this.isActive = false;
+        this.indexActive = null;
+        this.isActive = false;
     },
     removeMessage(index) {
       this.contacts[this.selectedContact].messages.splice(index, 1);
@@ -211,17 +210,20 @@ createApp({
       this.isActive = false;                      
       },
     invertActive(index){
-        this.isActive = !this.isActive;
-        this.indexActive = index;
-      },
+      this.isActive = !this.isActive;
+      this.indexActive = index;
+    },
     invertBellChange(){
-        this.bellChange = !this.bellChange;
-      },
+      this.bellChange = !this.bellChange;
+    },
     scrollToEnd() {  
       setTimeout(()=>{
-      let container = document.querySelector(".chat-msg");
-      container.scrollTo(0, container.scrollHeight);
-    },1100);
+        let container = document.querySelector(".chat-msg");
+        container.scrollTo(0, container.scrollHeight);
+      },1100);
     },
+    removeAllMessage() {
+      this.contacts[this.selectedContact].messages.splice(0, Infinity);
+  }
   }
 }).mount('#app')
