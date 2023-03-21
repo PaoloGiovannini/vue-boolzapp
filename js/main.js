@@ -6,6 +6,7 @@ createApp({
   data() {
     return {
         
+        bellChange: false,
         randomAnswer: '',
         answer: ['Dove ci vediamo oggi?', 'Va bene', 'Ok', 'Stasera usciamo?', 'Ci sei domani?','Mi devi 10 euro', 'Dimmi tutto', 'Oggi non ci sono', 'Domani andiamo al bowling?', 'Andiamo a prendere una birra^' ],
         indexActive: null,
@@ -210,6 +211,9 @@ createApp({
     invertActive(index){
         this.isActive = !this.isActive;
         this.indexActive = index;
+      },
+      invertBellChange(){
+        this.bellChange = !this.bellChange;
       },
   }
 }).mount('#app')
