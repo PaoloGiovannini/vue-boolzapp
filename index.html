@@ -49,10 +49,10 @@
                                         <img :src="element.avatar" alt="foto profilo">
                                         <div class="d-flex flex-column">
                                             <span>{{element.name}}</span>
-                                            <small>{{element.messages[element.messages.length - 1].message}}</small>
+                                            <small v-if="element.messages.length>0">{{element.messages[element.messages.length - 1].message}}</small>
                                         </div>
                                         <div class="flex-grow text-end">
-                                            <small>{{element.messages[element.messages.length - 1].actualDate.substr(11,5)}}</small>
+                                            <small v-if="element.messages.length>0">{{element.messages[element.messages.length - 1].actualDate.substr(11,5)}}</small>
                                         </div>
                                     </li>
                                     
