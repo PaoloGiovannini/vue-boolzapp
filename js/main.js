@@ -186,7 +186,7 @@ createApp({
         this.isActive = false;
     },
     sendNewMessage(index){
-        if(this.newMessage != ''){
+        if(this.newMessage.trim() != ''){
             this.contacts[index].messages.push({message: this.newMessage, status: 'sent', actualDate: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)});        
             this.newMessage='';
             this.receivedMessage(index);
