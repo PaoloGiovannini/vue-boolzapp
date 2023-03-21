@@ -72,7 +72,7 @@
 
 .position-a{
     position: absolute;
-    bottom: -20px;
+    bottom: -70px;
 }
 
 .position-right{
@@ -80,6 +80,7 @@ right: 10px;
 }
 
 /* fine utility */
+
 .background {
     height: 100vh;
     background: linear-gradient(180deg, rgb(0, 150, 136) 15%, rgb(213, 219, 215) 15%);
@@ -95,6 +96,10 @@ right: 10px;
 
 aside{
     width: 35%;
+}
+
+aside small{
+    color: lightgray;
 }
 
 .my-profile{
@@ -171,7 +176,6 @@ a{
     background-color: #b1b1b1
 }
   
-
 .border-left{
     border-left: 1px solid #b1b1b1;
 }
@@ -196,6 +200,28 @@ a{
     background-color: white;
 }
 
+.date{
+    font-size: 7px;
+}
+
+.dropdown{
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.chat-msg .position-r .fa-chevron-down{
+    font-size: 13px;
+}
+
+.dropdown span{
+    display: inline-block;
+    margin: 10px;
+}
+
+.send-msg{
+    background-color: #f3eeea;
+}
+
 .chat input{
     width: 100%;
     padding: 15px;
@@ -208,22 +234,7 @@ a{
     font-size: 20px;
 }
 
-.send-msg{
-    background-color: #f3eeea;
-}
-
-aside small{
-    color: lightgray;
-}
-
-.date{
-    font-size: 7px;
-}
-
 i:hover{
     color: green;
 }
 
-.chat-msg .position-r .fa-chevron-down{
-    font-size: 13px;
-}

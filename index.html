@@ -85,7 +85,7 @@
                             </div>
                             <!-- fine lista contatti -->
 
-                            <!-- inizio chat -->
+                            <!-- inizio chat con messaggi inviati e ricevuti -->
                             <div class="chat-msg">
                                 
                                 <div v-for="(element, index) in contacts[selectedContact].messages" class="d-flex position-r" :class="element.status == 'sent' ? 'justify-end' : 'justify-start'">
@@ -95,7 +95,7 @@
                                         <div class="d-flex justify-end">
                                             <span class="date">{{element.actualDate.substr(11,5)}}</span>
                                         </div>
-                                        <div class="position-a bg-white padding-10" v-if="isActive && index == indexActive" :class="element.status == 'sent' ? 'position-right' : ''">
+                                        <div class="position-a bg-white padding-10 dropdown" v-if="isActive && index == indexActive" :class="element.status == 'sent' ? 'position-right' : ''">
                                             <span class="cursor" @click="removeMessage(index)">Cancella messaggio</span> <br>
                                             <span class="cursor">Info messaggio</span>
                                         </div>
@@ -106,7 +106,7 @@
                                 
                             </div>
 
-                             <!-- fine chat -->
+                             <!-- fine chat con messaggi inviati e ricevuti -->
 
                              
                             <div class="h-70 send-msg d-flex align-center">
